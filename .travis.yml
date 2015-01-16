@@ -1,0 +1,14 @@
+language: ruby
+rvm: 2.2.0
+cache:
+  bundler: true
+  directories:
+    - public/assets
+bundler_args: --without production
+before_script: bundle exec rake db:create db:migrate assets:precompile RAILS_ENV=test
+
+script: bundle exec rake test
+
+notifications:
+  webhooks:
+    - https://idobata.io/hook/travis_ci/c30cd42d-fa04-415f-bd46-e6da3fa98850
