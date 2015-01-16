@@ -5,9 +5,11 @@ cache:
   directories:
     - public/assets
 bundler_args: --without production
-before_script: bundle exec rake db:create db:migrate assets:precompile RAILS_ENV=test
 
-script: bundle exec rake test
+script:
+  - bundle exec rubocop --fail-level=C
+  - bundle exec rake db:create db:migrate assets:precompile RAILS_ENV=test
+  - bundle exec rake test
 
 notifications:
   webhooks:
