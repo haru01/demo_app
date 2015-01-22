@@ -1,10 +1,7 @@
 language: ruby
 rvm: 2.2.0
-cache:
-  bundler: true
-  directories:
-    - public/assets
 bundler_args: --without production
+cache: bundler
 
 script:
   - bundle exec rubocop --fail-level=C
