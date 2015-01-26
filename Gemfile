@@ -16,6 +16,7 @@ group :development, :test do
   gem 'spring',      '1.1.3'
   gem 'rubocop',      '0.28.0'
   gem 'guard-rubocop'
+  gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
 end
 
